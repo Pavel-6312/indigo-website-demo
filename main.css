@@ -1,10 +1,10 @@
 .hero-bkg-animated {
-    background: gray url(./cover.png) repeat 0 0;
+    background: white url(./3.jpg) repeat 0 0;
     
     width: 100%;
     margin: 0;
     height: 300px;
-    background-size: auto 433px;
+    background-size: auto 432px;
     box-sizing: border-box;
     -webkit-animation: slide 60s linear infinite;
 
@@ -13,4 +13,8 @@
 @-webkit-keyframes slide {
     from { background-position: 0 0; }
     to { background-position: -1200px 0; }
+}
+
+body{
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.17);
 }
