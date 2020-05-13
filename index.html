@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="display:flex; background: #535353">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +8,72 @@
     <link rel = "stylesheet" type = "text/css" href = "main.css" />
 </head>
 
-<body style="background: white; display: flex; margin: 24px auto; flex-direction: column; width: 1200px;">
-    <img src='./1.png' style="margin: 0 auto; width: 1200px;">
+<body>
 
-    <img src='./2.png' style="margin: 48px auto 0 auto; height: 98px;">
+    <div style='height: 40px; background: rgba(0, 0, 0, 0.05); position: absolute; top:60px;
+width: 100vw; z-index: -1;'></div>
 
-    <div class='hero-bkg-animated' style="
-        margin: 48px auto 0 auto;
-        height: 500px;
-    ">
+    <img src='img/1.png' style="margin: 0 auto; width: 1200px;">
+    <img src='img/2.png' style="margin: 48px auto 24px auto; height: 98px;">
+
+    <div class="parent">
+        <div class='container'></div>
+        <div class='container-b'></div>
     </div>
 
-    <img src='./4.png' style="margin: 48px auto 0 auto; width: 1200px;">
-    <img src='./5.png' style="margin: 0px auto 0 auto; width: 1200px;">
-    <img src='./6.png' style="margin: 0 auto 0 auto; width: 1200px;">
+    <img src='./img/4.png' style="margin: 48px auto 0 auto; width: 1200px;">
+    <img src='./img/5.png' style="margin: 0px auto 0 auto; width: 1200px;">
 </body>
+
+<script>
+    //Source array
+    var images =['./y.png', './b.png', './r.png', './p.png', './g.png', './o.png']; 
+    var container = document.querySelector('.container');
+    var containerB = document.querySelector('.container-b');
+    
+
+//Generate 6
+    var randomImages = images.sort(func);  
+    function func(a, b) {
+        return 0.5 - Math.random();
+    }  
+
+    for (i=0; i<images.length; i++){
+        var elem = document.createElement("img");
+        elem.src = randomImages[i];
+        container.appendChild(elem);       
+    }
+    
+    randomImages = images.sort(func);  
+    for (i=0; i<images.length; i++){
+        var elem = document.createElement("img");
+        elem.src = randomImages[i];
+        containerB.appendChild(elem);       
+    }
+
+    setInterval(function(){
+        container.style.left = "1440px";     
+        container.classList.add("anim");
+    }, 80000)
+
+    setInterval(function(){
+        // Remove the child from queue that is the first li element.
+        for (i=0; i<images.length; i++){
+            containerB.removeChild(containerB[i]);
+        }
+
+        //Random array
+        var randomImages = images.sort(func);  
+        function func(a, b) {return 0.5 - Math.random();}  
+
+        for (i=0; i<images.length; i++){
+            var elem = document.createElement("img");
+            elem.src = randomImages[i];
+            containerB.appendChild(elem);
+        }  
+    }, 160000)
+
+    // img.clientWidth; get img width
+</script>
+
 </html>
