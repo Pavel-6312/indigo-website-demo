@@ -26,13 +26,13 @@ width: 100vw; z-index: -1;'></div>
 </body>
 
 <script>
-    //Source array
-    var images =['./y.png', './b.png', './r.png', './p.png', './g.png', './o.png']; 
+    //Source array and vars
+    var images =['./y.jpg', './b.jpg', './r.jpg', './p.jpg', './g.jpg', './o.jpg']; 
     var container = document.querySelector('.container');
     var containerB = document.querySelector('.container-b');
+    var rNum = Math.floor(Math.random() * 10);
     
-
-//Generate 6
+//Generate 12 initial iamges
     var randomImages = images.sort(func);  
     function func(a, b) {
         return 0.5 - Math.random();
@@ -43,37 +43,71 @@ width: 100vw; z-index: -1;'></div>
         elem.src = randomImages[i];
         container.appendChild(elem);       
     }
-    
+
+//Sort array
     randomImages = images.sort(func);  
     for (i=0; i<images.length; i++){
         var elem = document.createElement("img");
         elem.src = randomImages[i];
-        containerB.appendChild(elem);       
+        containerB.appendChild(elem);
+        
+        //Flip image at random
+        if(rNum > 5){
+            elem.classList.add("flip");     
+        }
     }
 
+//Switch container to containerB animation
     setInterval(function(){
         container.style.left = "1440px";     
         container.classList.add("anim");
+
+        setInterval(function(){
+            // Remove the child
+            for (i=0; i<images.length; i++){
+                container.removeChild(containerB[i]);
+            }
+
+            //Random array
+            randomImages = images.sort(func); 
+
+            for (i=0; i<images.length; i++){
+                var elem = document.createElement("img");
+                elem.src = randomImages[i];
+                container.appendChild(elem);
+
+                console.log(rNum);
+            //Flip image at random
+                if(rNum > 5){
+                    elem.classList.add("flip");     
+                }
+            }  
+        }, 160000)
+
     }, 80000)
 
     setInterval(function(){
-        // Remove the child from queue that is the first li element.
+        // Remove the child
         for (i=0; i<images.length; i++){
             containerB.removeChild(containerB[i]);
         }
 
         //Random array
-        var randomImages = images.sort(func);  
-        function func(a, b) {return 0.5 - Math.random();}  
+        randomImages = images.sort(func); 
 
         for (i=0; i<images.length; i++){
             var elem = document.createElement("img");
             elem.src = randomImages[i];
             containerB.appendChild(elem);
+
+        //Flip image at random
+            if(rNum > 5){
+                elem.classList.add("flip");     
+            }
         }  
     }, 160000)
 
-    // img.clientWidth; get img width
+
 </script>
 
 </html>

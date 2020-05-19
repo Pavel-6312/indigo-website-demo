@@ -20,7 +20,7 @@
 
 .parent{
     position: relative;
-    height: 375px;
+    height: 394px;
     margin-top:24px auto;
     overflow-x: hidden; 
     width: 100vw;
@@ -29,7 +29,11 @@
 }
 
 .container img, .container-b img{
-    width: 240px;
+    width: 240px; 
+}
+
+.flip{
+    transform: scaleX(-1);
 }
 
 @keyframes move {
