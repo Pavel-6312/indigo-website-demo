@@ -54,3 +54,34 @@ body{
     overflow-x: hidden; 
 }
 
+/* Link */
+a{
+    color: white;
+    background: #2EB380;
+    padding: 12px 12px;
+    /* width: 40px; */
+    font-family: sans-serif;
+    margin:auto;
+}
+
+.triangle{
+    fill:#2EB380;
+}
+
+.prod-link{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    animation: move 80s infinite;
+    animation-timing-function: linear;
+}
+
+.nav-line{
+    height: 40px; 
+    background: rgba(0, 0, 0, 0.05); 
+    position: absolute; 
+    top:60px;
+    width: 100vw; 
+    z-index: -1;
+}
+

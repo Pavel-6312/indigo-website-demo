@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Indigo website demo</title>
     <link rel = "stylesheet" type = "text/css" href = "main.css" />
 </head>
 
 <body>
-
-    <div style='height: 40px; background: rgba(0, 0, 0, 0.05); position: absolute; top:60px;
-width: 100vw; z-index: -1;'></div>
+    <div class="nav-line"></div>
 
     <img src='img/1.png' style="margin: 0 auto; width: 1200px;">
     <img src='img/2.png' style="margin: 48px auto 24px auto; height: 98px;">
+
+    <div class="prod-link">
+        <a class="a" href="">Payroll</a>
+        <svg height="12" width="12">
+            <polygon class='triangle' points="0,0 0,12 12,0" />
+        </svg>
+    </div>
 
     <div class="parent">
         <div class='container'></div>
@@ -25,89 +30,5 @@ width: 100vw; z-index: -1;'></div>
     <img src='./img/5.png' style="margin: 0px auto 0 auto; width: 1200px;">
 </body>
 
-<script>
-    //Source array and vars
-    var images =['./y.jpg', './b.jpg', './r.jpg', './p.jpg', './g.jpg', './o.jpg']; 
-    var container = document.querySelector('.container');
-    var containerB = document.querySelector('.container-b');
-    var rNum = Math.floor(Math.random() * 10);
-    
-//Generate 12 initial iamges
-    var randomImages = images.sort(func);  
-    function func(a, b) {
-        return 0.5 - Math.random();
-    }  
-
-    for (i=0; i<images.length; i++){
-        var elem = document.createElement("img");
-        elem.src = randomImages[i];
-        container.appendChild(elem);       
-    }
-
-//Sort array
-    randomImages = images.sort(func);  
-    for (i=0; i<images.length; i++){
-        var elem = document.createElement("img");
-        elem.src = randomImages[i];
-        containerB.appendChild(elem);
-        
-        //Flip image at random
-        if(rNum > 5){
-            elem.classList.add("flip");     
-        }
-    }
-
-//Switch container to containerB animation
-    setInterval(function(){
-        container.style.left = "1440px";     
-        container.classList.add("anim");
-
-        setInterval(function(){
-            // Remove the child
-            for (i=0; i<images.length; i++){
-                container.removeChild(containerB[i]);
-            }
-
-            //Random array
-            randomImages = images.sort(func); 
-
-            for (i=0; i<images.length; i++){
-                var elem = document.createElement("img");
-                elem.src = randomImages[i];
-                container.appendChild(elem);
-
-                console.log(rNum);
-            //Flip image at random
-                if(rNum > 5){
-                    elem.classList.add("flip");     
-                }
-            }  
-        }, 160000)
-
-    }, 80000)
-
-    setInterval(function(){
-        // Remove the child
-        for (i=0; i<images.length; i++){
-            containerB.removeChild(containerB[i]);
-        }
-
-        //Random array
-        randomImages = images.sort(func); 
-
-        for (i=0; i<images.length; i++){
-            var elem = document.createElement("img");
-            elem.src = randomImages[i];
-            containerB.appendChild(elem);
-
-        //Flip image at random
-            if(rNum > 5){
-                elem.classList.add("flip");     
-            }
-        }  
-    }, 160000)
-
-
-</script>
-
+<script src="main.js"></script>
 </html>
