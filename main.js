@@ -2,27 +2,27 @@
     var images =[
         {
             id: 'y',
-            src:'./y.jpg',
+            src:'./img/y.jpg',
         }, 
         {
             id: 'b',
-            src: './b.jpg',
+            src: './img/b.jpg',
         },
         {
             id:'r',
-            src: './r.jpg',
+            src: './img/r.jpg',
         },
         {
             id:'p',
-            src: './p.jpg',
+            src: './img/p.jpg',
         },
         {
             id: 'g',
-            src: './g.jpg',
+            src: './img/g.jpg',
         }, 
         {
             id:'o',
-            src:'./o.jpg',
+            src:'./img/o.jpg',
         }]; 
 
     var container = document.querySelector('.container');
@@ -45,7 +45,7 @@
 
 //Sort array for second container
     randomImages = images.sort(func); 
-    
+
 //Generate initial iamges for second container
     for (i=0; i<images.length; i++){
         var elem = document.createElement("img");

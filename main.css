@@ -1,4 +1,11 @@
 
+:root {
+  --green: #33C28F;
+  --blue: #2E5CE5;
+  --yellow: #FFBC01;
+  --pink: #FF8F8F;
+}
+
 .container, .container-b {
     display: flex;
     flex-direction: row;
@@ -85,3 +92,33 @@ a{
     z-index: -1;
 }
 
+.tile-label{
+    /* position: absolute;  */
+    display: block; 
+    margin: auto;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: center;
+}
+
+.tile-container{
+    position: relative; 
+    display: flex;
+    height: 280px;
+}
+
+.tile-col{
+    height: 1144px;
+    display: flex; 
+    flex-direction: column;
+    width: 304px;
+}
+
+.tile-container img{
+    /* right: 0px; */
+    position: absolute;
+    z-index: -3;
+}
