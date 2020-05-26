@@ -4,6 +4,8 @@
   --blue: #2E5CE5;
   --yellow: #FFBC01;
   --pink: #FF8F8F;
+  --red: #D40E19;
+  --orange: #FD8132;
 }
 
 .container, .container-b {
@@ -27,7 +29,7 @@
 
 .parent{
     position: relative;
-    height: 394px;
+    height: 400px;
     margin-top:24px auto;
     overflow-x: hidden; 
     width: 100vw;
@@ -62,25 +64,17 @@ body{
 }
 
 /* Link */
-a{
+.prod-link{
     color: white;
-    background: #2EB380;
     padding: 12px 12px;
-    /* width: 40px; */
     font-family: sans-serif;
     margin:auto;
 }
 
-.triangle{
-    fill:#2EB380;
-}
-
-.prod-link{
+.prod-link-block{
     display: flex;
     flex-direction: column;
-    margin: auto;
-    animation: move 80s infinite;
-    animation-timing-function: linear;
+    position: absolute;
 }
 
 .nav-line{
