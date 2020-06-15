@@ -111,11 +111,11 @@ body{
 .tile-container{
     position: relative; 
     display: flex;
-    height: 280px;
+    height: 304px;
 }
 
 .tile-col{
-    height: 1144px;
+    /* height: 1192px; */
     display: flex; 
     flex-direction: column;
     width: 304px;
@@ -134,8 +134,8 @@ body{
 }
 /* Show description on hover */
 .tile-container:hover > img, .tile-container:hover > label { 
-    opacity: 0.2;
-    transition: all ease 1s;
+    opacity: 0.1;
+    transition: all ease 0.6s;
 }
 
 .tile-container:hover > p { 
