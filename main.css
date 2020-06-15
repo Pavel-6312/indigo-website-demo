@@ -1,4 +1,14 @@
 
+*{
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+mark {
+  background-color: white;
+}
+
 :root {
   --green: #33C28F;
   --blue: #2E5CE5;
@@ -112,7 +122,23 @@ body{
 }
 
 .tile-container img{
-    /* right: 0px; */
     position: absolute;
     z-index: -3;
+    transition: all ease 0.5s;
+}
+
+.tile-container p{
+    position: absolute; margin:24px; 
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+/* Show description on hover */
+.tile-container:hover > img, .tile-container:hover > label { 
+    opacity: 0.2;
+    transition: all ease 1s;
+}
+
+.tile-container:hover > p { 
+    opacity: 1;
+    transition: all ease 2s;
 }
