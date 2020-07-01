@@ -127,7 +127,7 @@ body{
     line-height: 28px;
     text-align: center;
     padding: 16px;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .nav .cont .pages a:last-child{
@@ -164,12 +164,12 @@ body{
     text-align: center;
     /* margin: 8px 16px; */
     padding: 8px 16px;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .nav-line a:hover, .nav a:hover{
     background: rgba(0,0,0,0.05);
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
      
 
