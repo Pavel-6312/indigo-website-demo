@@ -225,3 +225,23 @@
             }
         }  
     }, 160000)
+
+//Hide header
+let prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".nav-line").style.top = "60px";
+  } else {
+    document.querySelector(".nav-line").style.top = "24px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+//Show subheader on scroll
+let test = document.querySelector(".nav");
+
+test.addEventListener("mouseover", function( event ) {   
+    document.querySelector(".nav-line").style.top = "60px";
+})

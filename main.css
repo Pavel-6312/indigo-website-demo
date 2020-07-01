@@ -16,6 +16,7 @@ mark {
   --pink: #FF8F8F;
   --red: #D40E19;
   --orange: #FD8132;
+  --b87: rgba(0,0,0,0.87);
 }
 
 .container, .container-b {
@@ -39,9 +40,9 @@ mark {
 
 .parent{
     position: relative;
-    height: 400px;
+    height: 404px;
     margin-top:24px auto;
-    overflow-x: hidden; 
+    overflow-x: hidden !important;
     width: 100vw;
     max-width: 1600px;
     align-self: center;
@@ -87,14 +88,81 @@ body{
     position: absolute;
 }
 
+.nav{
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 999;
+    flex-direction: column;
+}
+
+.cont{
+    margin: auto;
+    width: 1136px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-line .cont{
+    margin: auto;
+    width: 1136px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pages{
+    display: flex;
+    margin: auto 0 auto auto;
+}
+
+.nav .cont .pages a {
+    text-decoration: none;
+    color: var(--b87);
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    padding: 16px;
+}
+
+.nav .cont .pages a:last-child{
+    background: linear-gradient(180deg, #3366FF 0%, #2074F1 100%);
+    margin:8px;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 3px;
+}
+
+.nav .cont img{
+    margin: auto auto auto 0;
+}
+
 .nav-line{
     height: 40px; 
-    background: rgba(0, 0, 0, 0.05); 
-    position: absolute; 
-    top:60px;
-    width: 100vw; 
-    z-index: -1;
+    background: rgba(240, 240, 240, 0.9); 
+    backdrop-filter: blur(4px);
+    width: 100vw;
+    display: flex;
+    position: sticky; 
+    top: 60px;
+    transition: top 0.5s;
+    z-index: 998;
 }
+ .nav-line a{
+    text-decoration: none;
+    color: var(--b87);
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    margin: 8px 16px;
+}
+     
 
 .tile-label{
     /* position: absolute;  */
@@ -132,6 +200,7 @@ body{
     opacity: 0;
     transition: all ease 0.5s;
 }
+
 /* Show description on hover */
 .tile-container:hover > img, .tile-container:hover > label { 
     opacity: 0.1;
